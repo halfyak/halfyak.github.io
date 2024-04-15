@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>What is zero to the power of zero? | Halfyak - half code, half talk</title>
+<meta name="keywords" content="">
+<meta name="description" content="A school level maths discussion of the mathematical background needed to give a precise meaning to &ldquo;zero to the power of zero&rdquo;.">
+<meta name="author" content="">
+<link rel="canonical" href="https://halfyak.org/posts/zero-to-the-zero/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b609c58d5c11bb90b1a54e04005d74ad1ddf22165eb79f5533967e57df9c3b50.css" integrity="sha256-tgnFjVwRu5CxpU4EAF10rR3fIhZet59VM5Z&#43;V9&#43;cO1A=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://halfyak.org/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://halfyak.org/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://halfyak.org/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://halfyak.org/apple-touch-icon.png">
+<link rel="mask-icon" href="https://halfyak.org/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://halfyak.org/posts/zero-to-the-zero/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+  tex: {
+    
+    displayMath: [['\\[', '\\]']],
+    
+    inlineMath: [['\\(', '\\)']]
+ }
+};
+</script>
+
+<meta property="og:title" content="What is zero to the power of zero?" />
+<meta property="og:description" content="A school level maths discussion of the mathematical background needed to give a precise meaning to &ldquo;zero to the power of zero&rdquo;." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://halfyak.org/posts/zero-to-the-zero/" /><meta property="article:section" content="posts" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What is zero to the power of zero?"/>
+<meta name="twitter:description" content="A school level maths discussion of the mathematical background needed to give a precise meaning to &ldquo;zero to the power of zero&rdquo;."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://halfyak.org/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "What is zero to the power of zero?",
+      "item": "https://halfyak.org/posts/zero-to-the-zero/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "What is zero to the power of zero?",
+  "name": "What is zero to the power of zero?",
+  "description": "A school level maths discussion of the mathematical background needed to give a precise meaning to \u0026ldquo;zero to the power of zero\u0026rdquo;.",
+  "keywords": [
+    
+  ],
+  "articleBody": "What is \\(0^0\\) - zero raised to the power of zero?\nThis post arose out of a question someone at Atlassian asked on an internal forum. It isn’t about software, not even in some vaguely allegorical sense. It’s maths – a bit of arithmetic, some set theory, and a bit of real analysis at the end. It’s about zero to the power of zero.\nWhy is this even a question? What’s the first version of powers, \\(b^a\\), that you get taught? You’re usually taught that \\(b^a\\) is the product of \\(a\\) copies of \\(b\\), that is,\n\\[ b^a = b \\times b \\times\\, ... \\times b \\] with \\(a\\) repetitions of \\(b\\) in the product.\nFrom this definition, you might think that \\(0^a\\) should be \\(0\\) – because \\(0\\) times anything is \\(0\\). But that doesn’t work if \\(a\\) is \\(0\\) – what would zero copies of \\(b\\) be? There’s no actual \\(0\\) there to get times’d by anything.\nAfter the definition, you start to find out about rules like \\[ b^{(a+c)} = b^a \\times b^c \\] which are usually motivated by saying “If you put \\(a+c\\) \\(b\\)’s in a row and times them, it’s just like timesing \\(a\\) of them, then timesing \\(c\\) of them, then timesing those together”. This follows from the associativity of multiplication – it doesn’t matter which order you collect the terms in. It also means you can think about \\[ b^a = b^{(a+0)} = b^a \\times b^0 \\] At this point, it’s really tempting to cancel the \\(b^a\\) from both sides to see \\(b^0 = 1\\). Indeed, this almost always works, it only doesn’t work if \\(b^a = 0\\), because you can’t divide by \\(0\\). Since we don’t know \\(b^0\\) isn’t \\(0\\), we can’t do this. However, it makes us feel \\(b^0 = 1\\) most of the time, and so maybe \\(0^0 = 1\\). In fact, we can see from the above that \\[ 0^0 = 0^0 \\times 0^0 \\] Now if \\(x = x \\times x\\), then either \\(x\\) is either \\(0\\) or \\(1\\). You can see this because for such \\(x\\), \\[ x \\times (x-1) = x \\times x \\mathbin{-} x = 0 \\] and the only way two things can multiply to zero is if one, or other, are zero, which means either \\(x = 0\\) or \\(x \\mathbin{-} 1 = 0\\), and so \\(x\\) is \\(0\\) or \\(1\\). So if we give \\(0^0\\) a value, either \\(0^0 = 0\\), or \\(0^0 = 1\\).\nPeople often say at this point “\\(0^0\\) is undefined” or “it’s a convention that \\(0^0\\) is \\(1\\)”. I don’t like either of these answers, because I think there is a good answer, and it isn’t a convention. The problem is that we have a poor definition of power – our definition based on multiplying copies of \\(b\\) doesn’t have a clear meaning for \\(0\\) copies.\nWhat are numbers anyway? Non-negative integers, or natural numbers, that is, the counting numbers \\(0\\), \\(1\\), \\(2\\), …, are an abstraction of “How many things are in a bunch of things?”. Given a bunch of things \\(A\\), how many ways can I choose something from the bunch? The answer is a if there are a things in the bunch \\(A\\).\nYou get \\(\\mathbin{+}\\) by asking “How many ways can I choose something from bunch \\(A\\) or bunch \\(B\\,\\)?” You first pick which bunch (\\(A\\) or \\(B\\)), then pick from that bunch. If \\(A\\) has \\(a\\) things, and \\(B\\) has \\(b\\) things, you get \\(a+b\\).\nYou get \\(\\times\\) by asking “How many ways can I choose something from bunch \\(A\\) and bunch \\(B\\,\\)?” You might remember there are \\(a \\times b\\) ways of doing this – you can pick the first thing in \\(A\\) and any one of \\(b\\) \\(B\\)’s, or the second thing in \\(A\\) and one of \\(b\\) \\(B\\)’s, or …, or the \\(a\\)’th thing in \\(A\\) and any one of \\(b\\) \\(B\\)’s. This is \\(b+b+...+b\\) with \\(a\\) terms (remember or is \\(\\mathbin{+}\\)), which is \\(a \\times b\\).\nNotice that zero just works here. If \\(Z\\) is a bunch of zero things, \\(A+Z = A\\) – picking from \\(A\\) or an empty bunch is just picking from \\(A\\), and so \\(A \\times Z = Z\\) – for any pick from \\(A\\), there are no ways to pick the thing from \\(Z\\). Also, \\(Z \\times B = Z\\) – there’s no way to pick anything from the \\(Z\\) to pair with any \\(B\\). There’s a subtle and important difference here – we didn’t need to worry about what “zero copies of something” means – our definition gives us an answer without appeal to “convention”.\nHow to you get powers? Thinking of this as a counting question, the answer is “How many ways can I map from \\(A\\) into \\(B\\,\\)?”. That is, how many functions are there from \\(A\\) to \\(B\\,\\)? For each thing in \\(A\\), you need to pick the thing in \\(B\\) which that thing in \\(A\\) maps to. So you get \\(b\\) choices for the first thing in \\(A\\), and \\(b\\) choices for the second thing in \\(A\\), and …, and \\(b\\) choices for the last thing in \\(A\\). This is \\(b \\times b \\times .. \\times b\\) with \\(a\\) terms (remember and is \\(\\times\\)), which is \\(b^a\\). This definition is great, because it doesn’t care about zero. In this context zero would be an empty bunch of things, and this definition still works. We can define \\(A^B\\) to be “functions from \\(B\\) to \\(A\\)”, and it all works.\nExcept … what are the functions to or from the empty set? For this, you need to wonder what a function even is. This is a common theme in mathematics – answering a question requires finding a different way to ask the question, which in turn requires refining our definitions to handle the new cases.\nWe talked above about \\(A \\times B\\) – things in it are pairs of (something from \\(A\\), something from \\(B\\)). We can define a function as an unordered list (a subset) of pairs from \\(A \\times B\\) where every element of \\(A\\) appears exactly once in the first spot of a pair. For the programmers, you can think of it as a switch statement listing out for each thing in \\(A\\), what thing in \\(B\\) to choose for the function value.\nNow let’s think about zero, or our empty bunch \\(Z\\).\nWhat’s a function from \\(Z\\) to \\(B\\,\\)? It’s a subset of \\(Z \\times B\\) – which is empty. There’s exactly one subset of the empty set – an empty set (every set is a subset of itself). It also needs to have exactly one entry for every thing in \\(Z\\) – that’s easy – there’s nothing in \\(Z\\) to check. So the empty list of things is the one and only function from \\(Z\\) to \\(B\\). So \\(b^0 = 1\\).\nWhat about a function from \\(A\\) to \\(Z\\,\\)? It’s a subset of \\(A \\times Z\\) – and \\(A \\times Z\\) is empty, so again, the empty subset is the only candidate. It also needs to have exactly one entry for every thing in \\(A\\), which can’t happen if \\(A\\) isn’t empty, because there’s nothing to pick. So if \\(A\\) isn’t empty, there’s no function from \\(A\\) to \\(Z\\). So \\(0^a = 0\\) provided \\(a \\not= 0\\).\nWhat about \\(Z^Z\\,\\)? Functions from \\(Z\\) to \\(Z\\,\\)? There’s exactly one, as per the first argument. So \\(0^0 = 1\\).\nI really like this, because it makes totally clear why \\(b^0 = 1\\) is a more important rule than \\(0^a = 0\\). We come up with an abstraction (bunches of things) that allows a definition (functions between them) which works more generally (is oblivious to zero), and just crank the handle and see what it tells us. The asymmetry between \\(b^0\\) and \\(0^a\\) is split by the definition of function (needing an entry for everything in the source) being unsatisfiable if \\(A\\) is non empty and \\(B\\) is empty.\nWhat about other real numbers? When I blithely claimed \\(0^0 = 1\\), someone asked me\nIs this one of those “it depends on the branch of mathematics you’re using?”\nWe know powers work for other things – like fractions, where \\(a^{1\\over 2} = \\sqrt{a}\\) is the square root of \\(a\\). It’s much harder to motivate the definition here. You can do things like \\[ a^{1\\over 2} \\times a^{1\\over 2} = a^{{1\\over 2} + {1\\over 2}} = a^1 = a \\] and so \\(a^{1\\over 2}\\) better be a square root of \\(a\\). However, how do you figure out things like \\(e\\) (Euler’s \\(e\\)) to the power of \\(\\pi\\,\\)? It turns out there is a good definition that does everything you could want, and agrees with our basic version from the natural numbers, and it is \\[ b^a = e^{(a \\times \\mathrm{ln}\\,b)} \\] where \\(e^x\\) is the exponential function and \\(\\mathrm{ln}\\,x\\) is the natural logarithm. Those two links are to Wikipedia, which has pictures of those functions which might help in what follows if you don’t know those functions. You might also worry that it is circular to define \\(b^a\\) using \\(e^x\\), but the latter can be defined (specifically for \\(e\\)) using analysis and without needing to know \\(b^a\\) for arbitrary reals.\nHopefully you don’t need to know much about \\(\\mathrm{ln}\\,x\\) in what follows. It’s the number which makes \\(e^{\\mathrm{ln}\\,x} = x\\). The thing you do need to know is that \\(\\mathrm{ln}\\,0\\) is undefined. For small positive \\(x\\), it turns out \\(\\mathrm{ln}\\,x\\) is a very negative number, and it tends to negative infinity very fast as \\(x\\) tends to \\(0\\).\nSo this definition can’t tell you \\(0^a\\) – because you’d need to know \\(\\mathrm{ln}\\,0\\). It does tell you that \\[ b^0 = e^{0 \\times \\mathrm{ln}\\,b} = e^0 = 1 \\] provided that \\(b\\) is not zero. Even if \\(b\\) is really small. Tiny. So if you creep up on \\(0^0\\) from the direction of \\(b^0\\) as \\(b\\) gets really really small, you get \\(1\\).\nHowever, if \\(a\\) isn’t zero, then \\(0^a = 0\\). It’s not just we really want this to be true for most numbers. You can think about creeping up on \\(b^a\\) for a fixed positive \\(a\\) as \\(b\\) gets tiny. If \\(b\\) is tiny, \\(\\mathrm{ln}\\,b\\) is hugely negative. So \\(a \\times \\mathrm{ln}\\,b\\) is also huge and negative. And it turns out \\(e^x\\) for a huge negative \\(x\\) is tiny and positive. So in the limit, we find that \\(0^a = 0\\) – at least for positive \\(a\\).\nSo now let’s creep up on \\(0^0\\) from another direction – from the direction of \\(0^a\\) as \\(a\\) is positive but smaller and smaller. You always get \\(0\\) – since \\(0^a = 0\\) for such \\(a\\). So from this direction, you get \\(0\\).\nPick your favourite positive real number – I’ll call it \\(f\\), because I don’t know what you’re going to say. But I want you to creep up on \\(0^0\\) along \\(c^{(\\mathrm{ln}\\,f)/(\\mathrm{ln}\\,c)}\\) for positive \\(c\\) as \\(c\\) gets smaller and smaller. Why? Because \\[ c^{(\\mathrm{ln}\\,f)/(\\mathrm{ln}\\,c)} = e^{((\\mathrm{ln}\\,f)/(\\mathrm{ln}\\,c)) \\times (\\mathrm{ln}\\,c)} = e^{\\mathrm{ln}\\,f} = f \\] So from this direction, \\(0^0\\) looks like \\(f\\) – your favourite number, what ever it is. Here’s a picture which might help you visualize this path dependence:\nSo this is the sense in which \\(0^0\\) depends on the branch of maths you are using. Our best generalisation of \\(b^a\\) to real numbers is really weird near \\(0\\). Not is it just discontinuous – the value you get depends on how you approach it. It’s weirder – you can get any answer you want if you approach from the right direction.\nSo for the real numbers, there isn’t a good answer for \\(0^0\\).\nConclusion So why say it’s \\(1\\,\\)?\nWith no context, \\(0^0 = 1\\) is a good answer because, absent other information, we’re talking about natural numbers, and so we should answer in that context. In the context of natural numbers, which are related to bunches of things – aka finite sets – power has a definition for which \\(0^0\\) is very well defined, and the answer is \\(1\\).\nWith more context, say you want it for real numbers, things get weird. I don’t even recall what happens for complex numbers – but it’s at least as weird as for real numbers.\n",
+  "wordCount" : "2046",
+  "inLanguage": "en",
+  "datePublished": "0001-01-01T00:00:00Z",
+  "dateModified": "0001-01-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://halfyak.org/posts/zero-to-the-zero/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Halfyak - half code, half talk",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://halfyak.org/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://halfyak.org/" accesskey="h" title="Halfyak - half code, half talk (Alt + H)">Halfyak - half code, half talk</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://halfyak.org/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://halfyak.org/about" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://halfyak.org/posts" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      What is zero to the power of zero?
+    </h1>
+    <div class="post-meta">
+
+</div>
+  </header> 
+  <div class="post-content"><p>What is \(0^0\) - zero raised to the power of zero?</p>
+<p>This post arose out of a question someone at Atlassian asked on an internal
+forum. It isn&rsquo;t about software, not even in some vaguely allegorical sense.
+It&rsquo;s maths &ndash; a bit of arithmetic, some set theory, and a bit of real analysis
+at the end. It&rsquo;s about zero to the power of zero.</p>
+<h2 id="why-is-this-even-a-question">Why is this even a question?<a hidden class="anchor" aria-hidden="true" href="#why-is-this-even-a-question">#</a></h2>
+<p>What&rsquo;s the first version of powers, \(b^a\), that you get taught? You&rsquo;re
+usually taught that \(b^a\) is the product of \(a\) copies of \(b\), that is,</p>
+\[
+b^a = b \times b \times\, ... \times b
+\]
+<p>
+with \(a\) repetitions of \(b\) in the product.</p>
+<p>From this definition, you might think that \(0^a\) should be \(0\) &ndash; because
+\(0\) times anything is \(0\). But that doesn&rsquo;t work if \(a\) is \(0\) &ndash; what
+would zero copies of \(b\) be? There&rsquo;s no actual \(0\) there to get times&rsquo;d by
+anything.</p>
+<p>After the definition, you start to find out about rules like
+</p>
+\[
+b^{(a+c)} = b^a \times b^c
+\]
+<p>
+which are usually motivated by saying &ldquo;If you put \(a+c\) \(b\)&rsquo;s in a row and
+times them, it&rsquo;s just like timesing \(a\) of them, then timesing \(c\) of them,
+then timesing those together&rdquo;. This follows from the associativity of
+multiplication &ndash; it doesn&rsquo;t matter which order you collect the terms in.
+It also means you can think about
+</p>
+\[
+b^a = b^{(a+0)} = b^a \times b^0
+\]
+<p>
+At this point, it&rsquo;s really tempting to cancel the \(b^a\) from both sides to see
+\(b^0 = 1\). Indeed, this almost always works, it only doesn&rsquo;t work if \(b^a =
+0\), because you can&rsquo;t divide by \(0\). Since we don&rsquo;t know \(b^0\) isn&rsquo;t \(0\),
+we can&rsquo;t do this. However, it makes us feel \(b^0 = 1\) most of the time, and so
+maybe \(0^0 = 1\).  In fact, we can see from the above that
+</p>
+\[
+0^0 = 0^0 \times 0^0
+\]
+<p>
+Now if \(x = x \times x\), then either \(x\) is either \(0\) or \(1\). You can
+see this because for such \(x\),
+</p>
+\[
+x \times (x-1) = x \times x \mathbin{-} x = 0
+\]
+<p>
+and the only way two things can multiply to zero is if one, or other, are zero,
+which means either \(x = 0\) or \(x \mathbin{-} 1 = 0\), and so \(x\) is \(0\)
+or \(1\). So if we give \(0^0\) a value, either \(0^0 = 0\), or \(0^0 = 1\).</p>
+<p>People often say at this point &ldquo;\(0^0\) is undefined&rdquo; or &ldquo;it&rsquo;s a convention that
+\(0^0\) is \(1\)&rdquo;. I don&rsquo;t like either of these answers, because I think there
+is a good answer, and it isn&rsquo;t a convention. The problem is that we have a poor
+definition of power &ndash; our definition based on multiplying copies of \(b\)
+doesn&rsquo;t have a clear meaning for \(0\) copies.</p>
+<h2 id="what-are-numbers-anyway">What are numbers anyway?<a hidden class="anchor" aria-hidden="true" href="#what-are-numbers-anyway">#</a></h2>
+<p>Non-negative integers, or natural numbers, that is, the counting numbers \(0\),
+\(1\), \(2\), &hellip;, are an abstraction of &ldquo;How many things are in a bunch of
+things?&rdquo;.  Given a bunch of things \(A\), how many ways can I choose something
+from the bunch?  The answer is a if there are a things in the bunch \(A\).</p>
+<p>You get \(\mathbin{+}\) by asking &ldquo;How many ways can I choose something from
+bunch \(A\) <strong>or</strong> bunch \(B\,\)?&rdquo; You first pick which bunch (\(A\) or \(B\)),
+then pick from that bunch. If \(A\) has \(a\) things, and \(B\) has \(b\)
+things, you get \(a+b\).</p>
+<p>You get \(\times\) by asking &ldquo;How many ways can I choose something from bunch
+\(A\) <strong>and</strong> bunch \(B\,\)?&rdquo; You might remember there are \(a \times b\) ways
+of doing this &ndash; you can pick the first thing in \(A\) and any one of \(b\)
+\(B\)&rsquo;s, or the second thing in \(A\) and one of \(b\) \(B\)&rsquo;s, or &hellip;, or the
+\(a\)&rsquo;th thing in \(A\) and any one of \(b\) \(B\)&rsquo;s.  This is \(b+b+...+b\)
+with \(a\) terms (remember <strong>or</strong> is \(\mathbin{+}\)), which is \(a \times b\).</p>
+<p>Notice that zero just works here. If \(Z\) is a bunch of zero things, \(A+Z =
+A\) &ndash; picking from \(A\) or an empty bunch is just picking from \(A\), and so
+\(A \times Z = Z\) &ndash; for any pick from \(A\), there are no ways to pick the
+thing from \(Z\). Also, \(Z \times B = Z\) &ndash; there&rsquo;s no way to pick anything
+from the \(Z\) to pair with any \(B\).  There&rsquo;s a subtle and important
+difference here &ndash; we didn&rsquo;t need to worry about what &ldquo;zero copies of something&rdquo;
+means &ndash; our definition gives us an answer without appeal to &ldquo;convention&rdquo;.</p>
+<h2 id="how-to-you-get-powers">How to you get powers?<a hidden class="anchor" aria-hidden="true" href="#how-to-you-get-powers">#</a></h2>
+<p>Thinking of this as a counting question, the answer is &ldquo;How many ways can I
+<em>map</em> from \(A\) into \(B\,\)?&rdquo;. That is, how many functions are there from
+\(A\) to \(B\,\)? For each thing in \(A\), you need to pick the thing in \(B\)
+which that thing in \(A\) maps to. So you get \(b\) choices for the first thing
+in \(A\), and \(b\) choices for the second thing in \(A\), and &hellip;, and \(b\)
+choices for the last thing in \(A\). This is \(b \times b \times .. \times b\)
+with \(a\) terms (remember <strong>and</strong> is \(\times\)), which is \(b^a\). This
+definition is great, because it doesn&rsquo;t care about zero. In this context zero
+would be an empty bunch of things, and this definition still works. We can
+define \(A^B\) to be &ldquo;functions from \(B\) to \(A\)&rdquo;, and it all works.</p>
+<p>Except &hellip; what are the functions to or from the empty set?  For this, you need
+to wonder what a function even is.  This is a common theme in mathematics &ndash;
+answering a question requires finding a different way to ask the question, which
+in turn requires refining our definitions to handle the new cases.</p>
+<p>We talked above about \(A \times B\) &ndash; things in it are pairs of (something
+from \(A\), something from \(B\)). We can define a function as an unordered list
+(a subset) of pairs from \(A \times B\) where every element of \(A\) appears
+exactly once in the first spot of a pair. For the programmers, you can think of
+it as a <code>switch</code> statement listing out for each thing in \(A\), what thing in
+\(B\) to choose for the function value.</p>
+<p>Now let&rsquo;s think about zero, or our empty bunch \(Z\).</p>
+<p>What&rsquo;s a function from \(Z\) to \(B\,\)? It&rsquo;s a subset of \(Z \times B\) &ndash;
+which is empty. There&rsquo;s exactly one subset of the empty set &ndash; an empty set
+(every set is a subset of itself). It also needs to have exactly one entry for
+every thing in \(Z\) &ndash; that&rsquo;s easy &ndash; there&rsquo;s nothing in \(Z\) to check. So the
+empty list of things is the one and only function from \(Z\) to \(B\). So \(b^0
+= 1\).</p>
+<p>What about a function from \(A\) to \(Z\,\)?  It&rsquo;s a subset of \(A \times Z\) &ndash;
+and \(A \times Z\) is empty, so again, the empty subset is the only candidate.
+It also needs to have exactly one entry for every thing in \(A\), which can&rsquo;t
+happen if \(A\) isn&rsquo;t empty, because there&rsquo;s nothing to pick. So if \(A\) isn&rsquo;t
+empty, there&rsquo;s no function from \(A\) to \(Z\). So \(0^a = 0\) provided \(a
+\not= 0\).</p>
+<p>What about \(Z^Z\,\)? Functions from \(Z\) to \(Z\,\)? There&rsquo;s exactly one, as
+per the first argument. So \(0^0 = 1\).</p>
+<p>I really like this, because it makes totally clear why \(b^0 = 1\) is a more
+important rule than \(0^a = 0\). We come up with an abstraction (bunches of
+things) that allows a definition (functions between them) which works more
+generally (is oblivious to zero), and just crank the handle and see what it
+tells us. The asymmetry between \(b^0\) and \(0^a\) is split by the definition
+of function (needing an entry for everything in the source) being unsatisfiable
+if \(A\) is non empty and \(B\) is empty.</p>
+<h2 id="what-about-other-real-numbers">What about other real numbers?<a hidden class="anchor" aria-hidden="true" href="#what-about-other-real-numbers">#</a></h2>
+<p>When I blithely claimed \(0^0 = 1\), someone asked me</p>
+<blockquote>
+<p>Is this one of those &ldquo;it depends on the branch of mathematics you&rsquo;re using?&rdquo;</p>
+</blockquote>
+<p>We know powers work for other things &ndash; like fractions, where \(a^{1\over 2} =
+\sqrt{a}\) is the square root of \(a\). It&rsquo;s much harder to motivate the
+definition here. You can do things like
+</p>
+\[
+a^{1\over 2} \times a^{1\over 2} = a^{{1\over 2} + {1\over 2}} = a^1 = a
+\]
+<p>
+and so \(a^{1\over 2}\) better be a square root of \(a\). However, how do you
+figure out things like \(e\) (<a href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Euler&rsquo;s
+\(e\)</a>) to the power of
+\(\pi\,\)?  It turns out there is a good definition that does everything you
+could want, and agrees with our basic version from the natural numbers, and it
+is
+</p>
+\[
+b^a = e^{(a \times \mathrm{ln}\,b)}
+\]
+<p>
+where \(e^x\) is the <a href="https://en.wikipedia.org/wiki/Exponential_function">exponential
+function</a> and
+\(\mathrm{ln}\,x\) is the <a href="https://en.wikipedia.org/wiki/Natural_logarithm">natural
+logarithm</a>. Those two links are
+to Wikipedia, which has pictures of those functions which might help in what
+follows if you don&rsquo;t know those functions. You might also worry that it is
+circular to define \(b^a\) using \(e^x\), but the latter can be defined
+(specifically for \(e\)) using analysis and without needing to know \(b^a\) for
+arbitrary reals.</p>
+<p>Hopefully you don&rsquo;t need to know much about \(\mathrm{ln}\,x\) in what follows.
+It&rsquo;s the number which makes \(e^{\mathrm{ln}\,x} = x\).  The thing you <em>do</em> need
+to know is that \(\mathrm{ln}\,0\) is undefined. For small positive \(x\), it
+turns out \(\mathrm{ln}\,x\) is a very negative number, and it tends to negative
+infinity very fast as \(x\) tends to \(0\).</p>
+<p>So this definition can&rsquo;t tell you \(0^a\) &ndash; because you&rsquo;d need to know
+\(\mathrm{ln}\,0\). It does tell you that
+</p>
+\[
+b^0 = e^{0 \times \mathrm{ln}\,b} = e^0 = 1
+\]
+<p>
+provided that \(b\) is not zero.  Even if \(b\) is really small. Tiny. So if you
+creep up on \(0^0\) from the direction of \(b^0\) as \(b\) gets really really
+small, you get \(1\).</p>
+<p>However, if \(a\) isn&rsquo;t zero, then \(0^a = 0\). It&rsquo;s not just we really want
+this to be true for most numbers. You can think about creeping up on \(b^a\) for
+a fixed positive \(a\) as \(b\) gets tiny. If \(b\) is tiny, \(\mathrm{ln}\,b\)
+is hugely negative. So \(a \times \mathrm{ln}\,b\) is also huge and negative.
+And it turns out \(e^x\) for a huge negative \(x\) is tiny and positive. So in
+the limit, we find that \(0^a = 0\) &ndash; at least for positive \(a\).</p>
+<p>So now let&rsquo;s creep up on \(0^0\) from another direction &ndash; from the direction of
+\(0^a\) as \(a\) is positive but smaller and smaller. You always get \(0\) &ndash;
+since \(0^a = 0\) for such \(a\). So from this direction, you get \(0\).</p>
+<p>Pick your favourite positive real number &ndash; I&rsquo;ll call it \(f\), because I don&rsquo;t
+know what you&rsquo;re going to say. But I want you to creep up on \(0^0\) along
+\(c^{(\mathrm{ln}\,f)/(\mathrm{ln}\,c)}\) for positive \(c\) as \(c\) gets
+smaller and smaller. Why? Because
+</p>
+\[
+c^{(\mathrm{ln}\,f)/(\mathrm{ln}\,c)}
+  = e^{((\mathrm{ln}\,f)/(\mathrm{ln}\,c)) \times (\mathrm{ln}\,c)}
+  = e^{\mathrm{ln}\,f}
+  = f
+\]
+<p>So from this direction, \(0^0\) looks like \(f\) &ndash; your favourite number, what
+ever it is.  Here&rsquo;s a picture which might help you visualize this path
+dependence:</p>
+<p><img loading="lazy" src="images/limits.png" alt="Path dependence of real exponentiation"  />
+</p>
+<p>So this is the sense in which \(0^0\) depends on the branch of maths you are
+using. Our best generalisation of \(b^a\) to real numbers is really weird near
+\(0\). Not is it just discontinuous &ndash; the value you get depends on how you
+approach it. It&rsquo;s weirder &ndash; you can get any answer you want if you approach
+from the right direction.</p>
+<p>So for the real numbers, there isn&rsquo;t a good answer for \(0^0\).</p>
+<h2 id="conclusion">Conclusion<a hidden class="anchor" aria-hidden="true" href="#conclusion">#</a></h2>
+<p>So why say it&rsquo;s \(1\,\)?</p>
+<p>With no context, \(0^0 = 1\) is a good answer because, absent other information,
+we&rsquo;re talking about natural numbers, and so we should answer in that context. In
+the context of natural numbers, which are related to bunches of things &ndash; aka
+<em>finite sets</em> &ndash; power has a definition for which \(0^0\) is very well defined,
+and the answer is \(1\).</p>
+<p>With more context, say you want it for real numbers, things get weird. I don&rsquo;t
+even recall what happens for complex numbers &ndash; but it&rsquo;s at least as weird as
+for real numbers.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2024 <a href="https://halfyak.org/">Halfyak - half code, half talk</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

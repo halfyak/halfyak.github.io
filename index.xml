@@ -6,7 +6,15 @@
     <description>Recent content on Halfyak - half code, half talk</description>
     <generator>Hugo -- 0.124.1</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 15 Apr 2024 16:10:38 +1000</lastBuildDate>
     <atom:link href="https://halfyak.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>What is zero to the power of zero?</title>
+      <link>https://halfyak.org/posts/zero-to-the-zero/</link>
+      <pubDate>Mon, 15 Apr 2024 16:10:38 +1000</pubDate>
+      <guid>https://halfyak.org/posts/zero-to-the-zero/</guid>
+      <description>A school level maths discussion of the mathematical background needed to give a precise meaning to &amp;ldquo;zero to the power of zero&amp;rdquo;.</description>
+    </item>
     <item>
       <title>About</title>
       <link>https://halfyak.org/about/</link>
@@ -15,13 +23,6 @@
       <description>Halfyak is a place for me to collect together things that I am working on, or interested in talking about.
 Who am I? I&amp;rsquo;m Robbie Gates, and I&amp;rsquo;m a cofounder at Two Muffins.
 Previously, I&amp;rsquo;ve worked on enterprise collaboration software, cloud systems infrastructure, augmented reality phone apps, embedded software for consumer electronics, application delivery systems for mobile phones, transactional memory virtual machines, software for telephone switch administration, and teaching and research in mathematics and computer science.</description>
-    </item>
-    <item>
-      <title>What is zero to the power of zero?</title>
-      <link>https://halfyak.org/posts/zero-to-the-zero/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://halfyak.org/posts/zero-to-the-zero/</guid>
-      <description>A school level maths discussion of the mathematical background needed to give a precise meaning to &amp;ldquo;zero to the power of zero&amp;rdquo;.</description>
     </item>
   </channel>
 </rss>

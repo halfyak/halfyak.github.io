@@ -6,8 +6,15 @@
     <description>Recent content on Halfyak - half code, half talk</description>
     <generator>Hugo -- 0.125.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 15 Apr 2024 16:10:38 +1000</lastBuildDate>
+    <lastBuildDate>Thu, 25 Apr 2024 08:01:14 +1000</lastBuildDate>
     <atom:link href="https://halfyak.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Fashion Theory of Code</title>
+      <link>https://halfyak.org/posts/the-fashion-theory-of-code/</link>
+      <pubDate>Thu, 25 Apr 2024 08:01:14 +1000</pubDate>
+      <guid>https://halfyak.org/posts/the-fashion-theory-of-code/</guid>
+      <description>An exploration of an analogy between code and fashion, presenting the idea that thinking about code in context is like thinking about fashion in context.</description>
+    </item>
     <item>
       <title>What is zero to the power of zero?</title>
       <link>https://halfyak.org/posts/zero-to-the-zero/</link>
